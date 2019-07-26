@@ -1,0 +1,24 @@
+{
+    "bot" : {
+        "token": "YOUR_BOT_TOKEN_HERE",
+        "prefix" : "!",
+        "paths": {
+            "commands": "./commands",
+            "events": "./events",
+            "userdata": "./userdata"
+        },
+        "name" : "YOUR_BOT_NAME",
+        "releaseInfo" : "Beta",
+        "version" : "YOUR_BOT_VERSION"
+    },
+    "api" : {
+        "airkorea" : "",
+        "yt" : ""
+    },
+    "db" : {
+        "host" : "YOUR_DB_SERVER_ADDRESS",
+        "user" : "YOUR_DB_SERVER_ID",
+        "pass" : "YOUT_DB_SERVER_PW",
+        "db" : "YOUR_DB_SERVER_SCHEMA"
+    }
+}
