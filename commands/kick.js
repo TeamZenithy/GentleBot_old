@@ -2,18 +2,18 @@ const Base = require("../base/Command")
 const SmallRichEmbed = require('../modules/embed.js')
 const Embed = new SmallRichEmbed()
 
- class Ping extends Base {
+ class Kick extends Base {
   constructor(client) {
     super(client, {
-      name: "ping",
-      description: "봇의 핑을 보여줍니다.",
-      usage: client.config.bot.prefix + "ping",
-      category: "정보",
+      name: "kick",
+      description: "봇이 사용자를 킥 합니다.",
+      usage: client.config.bot.prefix + "<kick|킥|zlr>",
+      category: "관리",
       cooldown: 1000,
-      aliases: ["pong", "핑", "퐁", "vld"],
-      permLevel: 0,
-      permission: "READ_MESSAGES",
-      nickname: ":ping_pong:핑"
+      aliases: ["킥", "zlr"],
+      permLevel: 4,
+      permission: "KICK_MEMBERS",
+      nickname: ":hammer:킥"
     })
   }
   
@@ -24,4 +24,4 @@ const Embed = new SmallRichEmbed()
     }
 }
 
-module.exports = Ping
+module.exports = Kick

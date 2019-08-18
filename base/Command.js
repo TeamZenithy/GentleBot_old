@@ -3,9 +3,10 @@ class Command {
         this.client = client
         this.help = {
             name: options.name || null,
-            description: options.description || "No information specified.",
-            usage: options.usage || "",
-            category: options.category
+            description: options.description || "정보가 없습니다.",
+            usage: options.usage || "정보가 없습니다.",
+            category: options.category,
+            nickname: options.nickname
         }
         this.conf = {
             permLevel: options.permLevel || 0,

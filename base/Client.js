@@ -1,14 +1,11 @@
 const { Client, Collection } = require("discord.js")
 const { readdir } = require("fs")
 const DB = require("../modules/db.js")
-const userData = require('../modules/userData');
 
 class CustomClient extends Client {
     constructor(options) {
         super(options.clientOptions || {})
-
         this.db = null
-        this.userData = null
         this.commands = new Collection()
         this.aliases = new Collection()
         this.config = options.config ? require(`../${options.config}`) : {}
@@ -23,7 +20,6 @@ class CustomClient extends Client {
 
     connectDB(config) {
         this.db = new DB(config.host, config.user, config.pass, config.db)
-        this.userData = new userData(this.db)
         return this
     }
 

@@ -4,8 +4,7 @@
         "prefix" : "!",
         "paths": {
             "commands": "./commands",
-            "events": "./events",
-            "userdata": "./userdata"
+            "events": "./events"
         },
         "name" : "YOUR_BOT_NAME",
         "releaseInfo" : "Beta",

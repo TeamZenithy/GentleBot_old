@@ -6,13 +6,14 @@ const Embed = new SmallRichEmbed()
   constructor(client) {
     super(client, {
       name: "help",
-      description: "Command help",
-      usage: "",
-      category: "Information",
+      description: "명령어 도움말 입니다!",
+      usage: client.config.bot.prefix + "<help|manual|도움|도움말> <커맨드>",
+      category: "기본",
       cooldown: 1000,
-      aliases: ["manual"],
+      aliases: ["manual", "도움", "도움말"],
       permLevel: 0,
-      permission: "READ_MESSAGES"
+      permission: "READ_MESSAGES",
+      nickname: ":book:도움말"
     })
   }
   
@@ -37,15 +38,17 @@ const Embed = new SmallRichEmbed()
     const searched = this.client.commands.get(args[0])
 
     if (!searched) {
-      Embed.addField('Error 404', 'Not Found')
+      Embed.addField(':no_entry: 오류', '저런.. 해당하는 명령어를 찾을수 없어요.. :(')
       message.channel.send(Embed.get())
       return
     }
 
-    Embed.addField(searched.help.name, searched.help.description, true)
+    
+    Embed.addField(searched.help.nickname, `${searched.help.description}\n사용법: ` + "``" + `${searched.help.usage}` + "``", true)
     message.channel.send(Embed.get())
     return
   }
 }
+
 
 module.exports = Help
